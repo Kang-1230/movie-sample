@@ -5,19 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>내배캠 최고 평점 영화</title>
     <link rel="stylesheet" href="style.css" />
-    <script>
-      // 본인의 API 키를 넣어주셔야 합니다.
-      const API_KEY = "5c8a9b1eb3226789d2118422302ef310";
-      const URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
-
-      fetch(URL)
-        .then((response) => response.json())
-        .then((data) => {
-          console.log(data);
-          // 이후 데이터 처리
-        })
-        .catch((error) => console.error("Error:", error));
-    </script>
   </head>
   <body>
     <div>내배캠 최고 평점 영화 콜렉션</div>
@@ -30,6 +17,10 @@
       />
       <button id="search-button">검색</button>
       <script src="search.js"></script>
+    </div>
+    <div>
+      영화정보리스트
+      <script src="movie.js"></script>
     </div>
     <div id="movie-container"><script src="cards.js"></script></div>
   </body>

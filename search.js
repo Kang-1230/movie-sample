@@ -10,5 +10,3 @@ document.getElementById("search-button").addEventListener("click", () => {
     }
   });
 });
-
-alert("search 연결 완료");
