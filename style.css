@@ -1,0 +1,17 @@
+header {
+  text-align: center;
+  background-color: rgb(32, 31, 31);
+  color: #ffffff;
+}
+
+form {
+  text-align: center;
+}
+
+section {
+  background-color: yellow;
+}
+
+#cards.js {
+  background-color: blue;
+}

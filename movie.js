@@ -14,3 +14,7 @@ fetch(
   .then((response) => response.json())
   .then((response) => console.log(response))
   .catch((err) => console.error(err));
+
+//검색 구현
+//1. 영화 카드 리스트 선택하기
+//2. 입력값에 따라서 포함여부 확인

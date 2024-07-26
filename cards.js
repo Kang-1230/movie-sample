@@ -11,6 +11,8 @@ function createMovieCard(movie) {
   return card;
 }
 
+<script src="02.js"></script>;
+
 fetch(URL)
   .then((response) => response.json())
   .then((data) => {

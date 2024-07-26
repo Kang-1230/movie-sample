@@ -7,21 +7,44 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div>내배캠 최고 평점 영화 콜렉션</div>
-    <div>
-      영화 검색 :
-      <input
-        type="text"
-        id="search-input"
-        placeholder="영화 제목을 검색해 보세요"
-      />
-      <button id="search-button">검색</button>
-      <script src="search.js"></script>
-    </div>
-    <div>
-      영화정보리스트
-      <script src="movie.js"></script>
-    </div>
-    <div id="movie-container"><script src="cards.js"></script></div>
+    <header>
+      <div>내배캠 최고 평점 영화 콜렉션</div>
+    </header>
+    <form action="">
+      <div>
+        영화 검색 :
+        <input
+          type="text"
+          id="search-input"
+          placeholder="영화 제목을 검색해 보세요"
+        />
+        <button id="search-button">검색</button>
+        <script src="search.js"></script>
+      </div>
+    </form>
+    <section>
+      <div>
+        영화정보리스트
+        <script src="movie.js"></script>
+      </div>
+      <div id="movie-container">
+        <h3>영화 제목</h3>
+        <p>줄거리 요약</p>
+        <p>평점: 9.1</p>
+        <script src="cards.js"></script>
+      </div>
+      <div id="movie-container">
+        <h3>영화 제목</h3>
+        <p>줄거리 요약</p>
+        <p>평점: 9.1</p>
+        <script src="cards.js"></script>
+      </div>
+      <div id="movie-container">
+        <h3>영화 제목</h3>
+        <p>줄거리 요약</p>
+        <p>평점: 9.1</p>
+        <script src="cards.js"></script>
+      </div>
+    </section>
   </body>
 </html>
