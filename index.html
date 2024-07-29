@@ -18,33 +18,55 @@
           id="search-input"
           placeholder="영화 제목을 검색해 보세요"
         />
-        <button id="search-button">검색</button>
+        <button type="button" id="search-button">검색</button>
         <script src="search.js"></script>
       </div>
     </form>
     <section>
-      <div>
+      <div id="title-list">
         영화정보리스트
         <script src="movie.js"></script>
       </div>
-      <div id="movie-container">
-        <h3>영화 제목</h3>
-        <p>줄거리 요약</p>
-        <p>평점: 9.1</p>
-        <script src="cards.js"></script>
-      </div>
-      <div id="movie-container">
-        <h3>영화 제목</h3>
-        <p>줄거리 요약</p>
-        <p>평점: 9.1</p>
-        <script src="cards.js"></script>
-      </div>
-      <div id="movie-container">
-        <h3>영화 제목</h3>
-        <p>줄거리 요약</p>
-        <p>평점: 9.1</p>
-        <script src="cards.js"></script>
-      </div>
+      <div id="movie-list"></div>
     </section>
+    <script>
+      const API_KEY = "5c8a9b1eb3226789d2118422302ef310";
+      const URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
+
+      let temp_html = "";
+
+      fetch(URL)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(
+              "Network response was not ok " + response.statusText
+            );
+          }
+          return response.json();
+        })
+        .then((data) => {
+          if (data.results && Array.isArray(data.results)) {
+            const movieList = document.getElementById("movie-list");
+            data.results.forEach((movie) => {
+              let temp_html = `
+                            <div class="movie-card" onclick="showAlert('${movie.id}')">
+                                <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}" />
+                                <h3>${movie.title}</h3>
+                                <p>${movie.overview}</p>
+                                <p>평점: ${movie.vote_average}</p>
+                            </div>
+                        `;
+              movieList.insertAdjacentHTML("beforeend", temp_html);
+            });
+          } else {
+            console.error("No results found or data structure is incorrect");
+          }
+        })
+        .catch((error) => console.error("Fetch error: ", error));
+
+      function showAlert(id) {
+        alert(`"Id : " ${id}`);
+      }
+    </script>
   </body>
 </html>

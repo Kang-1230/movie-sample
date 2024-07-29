@@ -9,9 +9,37 @@ form {
 }
 
 section {
-  background-color: yellow;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgb(112, 112, 112);
 }
 
-#cards.js {
-  background-color: blue;
+#title.list {
+  text-align: center;
+}
+
+#movie-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.movie-card {
+  width: 300px;
+  height: auto;
+  margin: 20px;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
